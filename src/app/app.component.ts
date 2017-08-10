@@ -13,6 +13,10 @@ export class AppComponent {
   constructor(private _http: Http) {}
 
   cityName = "";
+  cityHumidity = "";
+  cityPressure = "";
+  cityTemp = "";
+
   searchCity() {
     this._http.get("http://api.openweathermap.org/data/2.5/weather?q=" + this.cityName + "&APPID=de84f1f1eaffc87826f0a6d42094445f")
 
@@ -20,6 +24,9 @@ export class AppComponent {
       (res: Response) => {
         const weatherCity = res.json();
         console.log(weatherCity);
+        this.cityHumidity = weatherCity.main.humidity;
+        this.cityPressure = weatherCity.main.pressure;
+        this.cityTemp = weatherCity.main.temp;
       }
     )
 

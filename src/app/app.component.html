@@ -9,6 +9,16 @@
 
 
 <hr>
-<input type="text" [(ngModel)]=cityName>
-<button (click)=searchCity()>Search</button>
+<div class="container">
+	
+	<input type="text" [(ngModel)]=cityName>
+	<button (click)=searchCity()>Search</button>
 
+</div>
+
+<br />
+
+<h4>City: {{cityName}}</h4>
+<h4>Humidity: {{cityHumidity}}</h4>
+<h4>Pressure: {{cityPressure}}</h4>
+<h4>Temp: {{cityTemp}}</h4>
